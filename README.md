@@ -24,7 +24,9 @@ Note that it will only work:
 Download and host the `remove-cookies-worker.js` script on your domain (no cross-domain allowed).
 
 You can choose on which assets the cookies will be removed. Just change the regex on the first line of the script, which is set to `.*` by default. The following example specifies every scripts, stylesheets, images and fonts inside the /assets/ directory:
-```\/assets\/.*\.(js|css|jpg|png|gif|svg|woff|woff2|ttf|)$```
+```js
+var ASSETS_PATH_REGEX = /\/assets\/.*\.(js|css|jpg|png|gif|svg|woff|woff2|ttf|)$/;
+```
 
 Refer to the worker on you page with this line of JS:
 ```js
