@@ -1,12 +1,12 @@
 # A service worker that removes cookies on requests
 
-Cookies have a weight. The bigger the cookies are on your website, the bigger requests to same-origin ressources will be. For example, if the cookie is 3KB, every request weights 3KB + other headers size. Then the request gets bigger than a network packet, so it needs to send several packets, so this is longer. This can also lead to upload bandwidth saturation, which is generally smaller than download bandwidth.
+Cookies have a weight. Big cookies mean big requests to the server. For example, if the cookie on your website is 3KB, every request on the same-origin automatically weights 3KB + other headers size. If the request is bigger than a network packet, then the request is splitted in several packets and it takes more time to be sent to the server. This can also lead to upload bandwidth saturation, because upload bandwidth is generally smaller than download bandwidth.
 
-**Most of the time, assets don't need the cookies.**
+## Most of the time, assets don't need cookies.
     
 The best solution is of course to reduce the cookie size on your website. But it's not always easy: authentication cookies, A/B testing cookies, ...
 
-Another solution is to serve your assets from another domain. This leads to an additional DNS lookup and connection, which can also slow down the page load.
+Another solution is to serve your assets from another domain. But this leads to an additional DNS lookup and connection, which can also slow down the page load.
 
 
 ## Service workers to the rescue
@@ -16,10 +16,10 @@ While playing with service workers, I realized that it was possible to "omit" cr
 Note that it will only work:
 - on **HTTPS**
 - on <a href="http://caniuse.com/serviceworkers" target="_blank">compatible browsers</a>
-- not on the first page load because the worker is not yet active, only for the second page and the others
+- not on the first page load because the worker is not yet active, only for the next pages
 
 
-## Install
+## Installation
 
 Host the `remove-cookies-worker.js` script on your domain (no cross-domain allowed).
 
@@ -35,7 +35,11 @@ That's it! A good way to test if it works is through a spying proxy that can int
 
 ## Other headers
 
-I tried some other ways to reduce the weight of the requests.
+I tried some other ways to reduce the weight of the requests. I managed to shorten the Accept-Language header to `*`. Some people can have a long string in this one. I could not change any other headers, although the spec says we should be able to modify the `User-Agent`.
 
-It also shortens the Accept-Language header to `*`. Some people can have a long string in this one.
-I could not change any other headers, although the spec says we could be able to modify the `User-Agent`.
+
+## Author
+
+Gaël Métais. I'm a webperf freelance. Follow me on Twitter [@gaelmetais](https://twitter.com/gaelmetais), I tweet about Web Performances, Front-end and new versions of YellowLabTools!
+
+If you understand French, you can visit [my website](http://www.gaelmetais.com) (will be soon in English too).

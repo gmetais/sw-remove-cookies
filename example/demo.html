@@ -19,7 +19,7 @@
     <h1>sw-remove-cookies</h1>
 
     <h2>What is it?</h2>
-    <p>Cookies have a weight. The bigger the cookies are on your website, the bigger requests to same-origin ressources will be. For example, if the cookie is 3KB, every request weights 3KB + other headers size. Then the request gets bigger than a network packet, so it needs to send several packets, so this is longer. This can also lead to upload bandwidth saturation, which is generally smaller than download bandwidth.</p>
+    <p>Cookies have a weight. Big cookies mean big requests to the server. For example, if the cookie on your website is 3KB, every request on the same-origin automatically weights 3KB + other headers size. If the request is bigger than a network packet, then the request is splitted in several packets and it takes more time to be sent to the server. This can also lead to upload bandwidth saturation, because upload bandwidth is generally smaller than download bandwidth.</p>
     
     <p>The best solution is of course to reduce the cookie size on your website. But it's not always easy: authentication cookies, A/B testing cookies, ...</p>
 
