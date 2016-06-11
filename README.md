@@ -45,6 +45,6 @@ No. It has not been tested in production and this is very new for the moment. I'
 
 ## Author
 
-Gaël Métais. I'm a webperf freelance. Follow me on Twitter [@gaelmetais](https://twitter.com/gaelmetais), I tweet about Web Performances, Front-end and new versions of YellowLabTools!
+Gaël Métais. I'm a webperf freelance. Follow me on Twitter [@gaelmetais](https://twitter.com/gaelmetais), I tweet about Web Performances and Front-end.
 
 If you understand French, you can visit [my website](http://www.gaelmetais.com) (will be soon in English too).
