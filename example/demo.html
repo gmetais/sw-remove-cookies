@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script>
+        document.cookie = "cookie0=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie1=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie2=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie3=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie4=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie5=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie6=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie7=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie8=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+        document.cookie = "cookie9=123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123";
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <h1>sw-remove-cookies</h1>
+
+    <h2>What is it?</h2>
+    <p>Cookies have a weight. The bigger the cookies are on your website, the bigger requests to same-origin ressources will be. For example, if the cookie is 3KB, every request weights 3KB + other headers size. Then the request gets bigger than a network packet, so it needs to send several packets, so this is longer. This can also lead to upload bandwidth saturation, which is generally smaller than download bandwidth.</p>
+    
+    <p>The best solution is of course to reduce the cookie size on your website. But it's not always easy: authentication cookies, A/B testing cookies, ...</p>
+
+    <p>This solution uses Service Workers to remove cookies on same-origin requests. Note that it will only work on <b>HTTPS</b> and on <a href="http://caniuse.com/serviceworkers" target="_blank">compatible browsers</a>.</p>
+
+
+    <h2>Some data...</h2>
+    <div id="compatibility">Your browser is <span class="compatible">compatible</span><span class="notCompatible">not compatible</span> with service workers.</div>
+    <div id="serviceWorkerActive">The service worker is <span>up and running</span>.</div>
+    <div id="serviceWorkerInactive"><span>The service worker is not active yet. Refresh the page to get it active.</span></div>
+    <div class="cookie size">The cookies size on this page is <span id="cookieSize"></span> Bytes.</div>
+    <div>This page loads <b>52</b> assets. When the service worker is running, this is a total of <span id="totalCookieSize"></span> Bytes saved.</div>
+
+    <h2>How do I see it in action?</h2>
+    <p>If your browser is compatible and the service worker is active, open your browser's network console and look at the requests. All assets loaded should have no cookie headers.</p>
+
+    <h2>Get the script on GitHub!</h2>
+    <p><a href="https://github.com/gmetais/sw-remove-cookies">https://github.com/gmetais/sw-remove-cookies</a></p>
+
+    <div id="images"></div>
+    <p class="copyright">Image by brainloc on sxc.hu (Bob Smith) (stock.xchng) [CC BY 2.5 (http://creativecommons.org/licenses/by/2.5)], via Wikimedia Commons.</p>
+    
+    <script src="assets/scripts.js"></script>
+    <script>
+        // Register the service worker
+        navigator.serviceWorker.register('../remove-cookies-worker.js');
+    </script>
+</body>
+</html>

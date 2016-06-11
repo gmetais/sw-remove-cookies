@@ -1,0 +1,44 @@
+body {
+    background: #FFE;
+}
+
+.compatible, .notCompatible {
+    display: none;
+}
+#compatibility.yes .compatible {
+    display: inline;
+    color: green;
+    font-weight: bold;
+}
+#compatibility.no .notCompatible {
+    display: inline;
+    color: red;
+    font-weight: bold;
+}
+
+#serviceWorkerActive, #serviceWorkerInactive {
+    display: none;
+}
+#serviceWorkerActive.yes {
+    display: block;
+}
+#serviceWorkerActive span {
+    color: green;
+    font-weight: bold;
+}
+#serviceWorkerInactive.yes {
+    display: block;
+}
+#serviceWorkerInactive span {
+    color: red;
+    font-weight: bold;
+}
+#cookieSize, #totalCookieSize {
+    font-weight: bold;
+}
+#images {
+    margin: 40px 0 0;
+}
+.copyright {
+    font-size: 9px;
+}
