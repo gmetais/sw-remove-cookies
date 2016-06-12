@@ -1,6 +1,6 @@
 # A service worker that removes cookies on requests
 
-Cookies have a weight. Big cookies mean big requests to the server. For example, if the cookie on your website is 3KB, every request on the same-origin automatically weights 3KB + other headers size. If the request is bigger than a network packet, then the request is splitted in several packets and it takes more time to be sent to the server. Cookies can also lead to upload bandwidth saturation, because upload bandwidth is generally smaller than download bandwidth.
+Cookies have a weight. Big cookies mean big requests to the server. For example, if the cookie on your website is 3KB, every request on the same-origin automatically weights 3KB + other headers size. If the request is bigger than a network packet (depends, but generally around 1500 Bytes), then the request is splitted in several packets and it takes more time to be sent to the server. Cookies can also lead to upload bandwidth saturation, because upload bandwidth is generally smaller than download bandwidth.
 
 This is something that's rarely discussed, and I don't know any tool that helps developers figuring out there's a problem. But I do webperf audits for companies and I've seen some terrible perf issues caused by cookies.
 
