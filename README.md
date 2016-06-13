@@ -59,6 +59,11 @@ The name of the `remove-cookies-worker.js` is quite long, and its URL will be se
 The goal of this service worker is to optimize load time on same-origin assets. You can slightly modify so it removes cookies on other origins. Just remember that removing cookies on a tracker makes it useless, so you'd rather completly remove it from the page!
 
 
+## HTTP/2 and hpack
+
+Hpack is the compression technology used in HTTP/2. In theory hpack is able to "diff" the headers, and prevent sending the same header in subsequent requests. Results should be similar to this service worker, so you might not need it if you're on HTTP2.
+
+
 ## Author
 
 Gaël Métais. I'm a webperf freelance. Follow me on Twitter [@gaelmetais](https://twitter.com/gaelmetais), I tweet mostly about Web Performances.
