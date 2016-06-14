@@ -45,7 +45,9 @@
     <script src="assets/scripts.js"></script>
     <script>
         // Register the service worker
-        navigator.serviceWorker.register('../remove-cookies-worker.js');
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../remove-cookies-worker.js');
+        }
     </script>
 </body>
 </html>

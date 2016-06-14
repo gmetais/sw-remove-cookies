@@ -34,7 +34,9 @@ Minify your service worker.
 
 Refer to the worker on you page with this line of JS:
 ```js
-navigator.serviceWorker.register('my_path/remove-cookies-worker.js');
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('my_path/remove-cookies-worker.js');
+}
 ```
 
 That's it! A good way to test if it works is through a spying proxy that can intercept HTTPS requests. I use Charles Proxy and if you do so, make sure you correctly enable spying on the HTTPS domain, it's disabled by default.
