@@ -70,4 +70,4 @@ Hpack is the compression technology used in HTTP/2. In theory hpack is able to "
 
 Gaël Métais. I'm a webperf freelance. Follow me on Twitter [@gaelmetais](https://twitter.com/gaelmetais), I tweet mostly about Web Performances.
 
-If you understand French, you can visit [my website](http://www.gaelmetais.com) (will be soon in English too).
+I can also help your company implement Service Workers, visit [my website](https://www.gaelmetais.com).
